@@ -1,15 +1,22 @@
-What is this?
+What is This?
 =============
 
-Russian checkers game written in Prolog language.
+Russian checkers (Draughts) game written in Prolog language.
 
-Rules are standard for [Russian checkers](http://en.wikipedia.org/wiki/Russian_checkers):
+The russian draughts was chosen among other draughts variants because the rules (especially rules for kings) offer more freedom and thus increased search space. In other words, it's just slightly more complicated to impltement.
+
+This whole project was done as a fun exercise and bears zero practical value.
+
+Rules
+=====
+
+Rules are standard for [russian checkers](http://en.wikipedia.org/wiki/Russian_checkers):
 * Board is an 8x8 grid
 * There are two kinds of pieces (figures): men and kings
 * Long-range kings
 * Men can capture backwards
 
-How to play?
+How to Play?
 ============
 
 Install Prolog
@@ -18,15 +25,15 @@ Install Prolog
 For now only [SWI-Prolog](http://www.swi-prolog.org/) is supported.
 You can download it from [here](http://www.swi-prolog.org/download/stable).
 
-Start game
+Start the Game
 ----------
 
-To play you only need file **russian_checkers.pl**. 
+To play you only need file **russian_checkers.pl**.
 Download it and open in SWI Prolog (in Windows usually you can just double click the file, alternatively type `consult('your_path/russian_checkers.pl').` in Prolog terminal, where `your_path` is a full path to `russian_checkers.pl` file).
 
 To start game type `play.`. You will be prompted for the side selection (black or white).
 
-Game board
+Board
 ----------
 
 Game board appears like this:
@@ -53,22 +60,22 @@ Game board appears like this:
     0   1   2   3   4   5   6   7
 ```
 
-Cells are numbered from 0 to 7. 
+Cells are numbered from 0 to 7.
 Figures are marked as: `X` - white king, `x` - white man, `O` - black king, `o` - black man.
 
-Making moves
+Making Moves
 ------------
 
 When prompted for move (`Your move:`) you need to enter start and destination positions for your move.
 Each position is entered as `X-Y.`. For example, to move white man from cell (2, 2) to cell (3, 3) enter: `2-2. 3-3.`. You will see board updated after your move, and a board updated after computer responded to your move.
 
-Making capturing
+Capturing
 ----------------
 
 In Russian checkers when you have possibility to make capture, then you have to do it.
 If you have possibility to capture, you will be prompted to enter capture path: `Please input your capture path (type 'end.' to finish):`.
 
-Capture path is a list of positions, ending with a term `end.`. 
+Capture path is a list of positions, ending with a term `end.`.
 The first position in a list is a position of your man or king which is making a capture. The other positions are positions of intermediate cells on which your figure jumps during the capturing.
 
 For example, for the board below you can enter two possible capture paths (for white):
@@ -93,12 +100,12 @@ For example, for the board below you can enter two possible capture paths (for w
 0 | . |   | . |   | . |   | . |   | 0
   ---------------------------------
     0   1   2   3   4   5   6   7  
-Please input your capture path (type 'end.' to finish): 
+Please input your capture path (type 'end.' to finish):
 ```
 
 The first is `0-2. 2-4. end.`, to capture one enemy men using our men. And a second one is `1-1. 5-5. 7-3. end.`, to capture two enemy men using our king.
 
-End of the game
+End of The Game
 ---------------
 
 When one of the sides can't make any move - other side is considered a winner.
