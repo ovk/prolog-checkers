@@ -1,16 +1,19 @@
 What is This?
 =============
 
-Russian checkers (Draughts) game written in Prolog language.
+Checkers (Draughts) game written in Prolog language.
 
-The russian draughts was chosen among other draughts variants because the rules (especially rules for kings) offer more freedom and thus increased search space. In other words, it's just slightly more complicated to impltement.
+This checkers follow [russian draights](https://en.wikipedia.org/wiki/Russian_draughts) rules.
+The russian draughts was chosen among other draughts variants because the rules (especially rules for kings) offer more freedom and thus increased search space.
+In other words, it was just slightly more complicated and fun to implement.
 
-This whole project was done as a fun exercise and bears zero practical value.
+This whole project was done as a fun experiment and bears zero practical value.
 
 Rules
 =====
 
 Rules are standard for [russian checkers](http://en.wikipedia.org/wiki/Russian_checkers):
+
 * Board is an 8x8 grid
 * There are two kinds of pieces (figures): men and kings
 * Long-range kings
@@ -28,8 +31,8 @@ You can download it from [here](http://www.swi-prolog.org/download/stable).
 Start the Game
 ----------
 
-To play you only need file **russian_checkers.pl**.
-Download it and open in SWI Prolog (in Windows usually you can just double click the file, alternatively type `consult('your_path/russian_checkers.pl').` in Prolog terminal, where `your_path` is a full path to `russian_checkers.pl` file).
+To play you only need file **checkers.pl**.
+Download it and open in SWI Prolog (in Windows usually you can just double click the file, alternatively type `consult('your_path/checkers.pl').` in Prolog terminal, where `your_path` is a full path to `checkers.pl` file).
 
 To start game type `play.`. You will be prompted for the side selection (black or white).
 
@@ -72,7 +75,7 @@ Each position is entered as `X-Y.`. For example, to move white man from cell (2,
 Capturing
 ----------------
 
-In Russian checkers when you have possibility to make capture, then you have to do it.
+In russian checkers when you have possibility to make capture, then you have to do it.
 If you have possibility to capture, you will be prompted to enter capture path: `Please input your capture path (type 'end.' to finish):`.
 
 Capture path is a list of positions, ending with a term `end.`.
@@ -81,7 +84,7 @@ The first position in a list is a position of your man or king which is making a
 For example, for the board below you can enter two possible capture paths (for white):
 
 ```
-    0   1   2   3   4   5   6   7  
+    0   1   2   3   4   5   6   7
   ---------------------------------
 7 |   | . |   | . |   | . |   | . | 7
   ---------------------------------
@@ -99,7 +102,7 @@ For example, for the board below you can enter two possible capture paths (for w
   ---------------------------------
 0 | . |   | . |   | . |   | . |   | 0
   ---------------------------------
-    0   1   2   3   4   5   6   7  
+    0   1   2   3   4   5   6   7
 Please input your capture path (type 'end.' to finish):
 ```
 
@@ -114,9 +117,10 @@ There is no check for the draw.
 Tweaking
 ========
 
-In the beginning of the **russian_checkers.pl** file there are some predicates you can change, like depth of decision tree for minimax algorithm, initial positions of men and kings on the board, and board evaluation function.
+In the beginning of the **checkers.pl** file there are some predicates you can change, like depth of decision tree for minimax algorithm, initial positions of men and kings on the board, and board evaluation function.
 
 License
 =======
 
 This program is licensed under BSD 2-clause license (or Simplified BSD License, or FreeBSD License).
+
